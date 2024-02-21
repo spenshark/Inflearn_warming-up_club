@@ -16,17 +16,17 @@ import java.util.List;
 public class AssignmentController {
 
     @GetMapping("/api/v1/calc")
-    public CalcResponse calculator(NumberRequest request){
+    public CalcResponse calculator(NumberRequest request) {
         return new CalcResponse(request.getNum1(), request.getNum2());
     }
 
     @GetMapping("/api/v1/week")
-    public WeekResponse getWeek(DateRequest day){
+    public WeekResponse getWeek(DateRequest day) {
         return new WeekResponse(day.getDay());
     }
 
     @PostMapping("/api/v1/add")
-    public int addNum(@RequestBody NumListRequest request){
+    public int addNum(@RequestBody NumListRequest request) {
         return request.getNumbers().stream().mapToInt(i -> i).sum();
     }
 
