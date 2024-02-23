@@ -39,7 +39,7 @@ public class UserRepository {
     }
 
     public boolean isUserNotExist(String name) {
-        String readSql = "SELECT * FROM user WHERE id = ?";
+        String readSql = "SELECT * FROM user WHERE name = ?";
         return jdbcTemplate.query(readSql, (rs, rowNum) -> 0, name).isEmpty();
     }
 
