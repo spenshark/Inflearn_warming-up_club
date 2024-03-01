@@ -1,3 +1,4 @@
+/*
 package com.group.libraryapp.assignment.repository;
 
 import com.group.libraryapp.assignment.dto.q456.Fruit;
@@ -9,11 +10,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 @Qualifier("memory")
-public class FruitMemoryRepository implements FruitRepository{
+public class FruitMemoryRepositoryV1 implements FruitRepositoryV1 {
 
     private List<Fruit> fruits = new ArrayList<>();
     private static Long id = 1L;
@@ -50,3 +50,4 @@ public class FruitMemoryRepository implements FruitRepository{
         return new FruitAmountResponse(salesAmount, notSalesAmount);}
 
 }
+*/

@@ -1,16 +1,16 @@
 package com.group.libraryapp.assignment.repository;
 
-import com.group.libraryapp.assignment.dto.q456.FruitAmountResponse;
-import com.group.libraryapp.assignment.dto.q456.FruitInfRequest;
-import com.group.libraryapp.assignment.dto.q456.FruitSoldRequest;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.group.libraryapp.assignment.dto.q456.Fruit;
+import com.group.libraryapp.domain.user.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+import java.util.Optional;
 
-public interface FruitRepository {
+public interface FruitRepository extends JpaRepository<Fruit, Long> {
 
-    void addFruit(FruitInfRequest request);
+    Optional<Fruit> findByName(String name);
 
-    void isSoldFruit(FruitSoldRequest request);
+    List<Fruit> findAllByName(String name);
 
-    FruitAmountResponse checkSalesAmount(String name);
 }

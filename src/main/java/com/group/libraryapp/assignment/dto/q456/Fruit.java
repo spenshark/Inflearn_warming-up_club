@@ -1,21 +1,29 @@
 package com.group.libraryapp.assignment.dto.q456;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Fruit {
-    private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private LocalDate warehousingDate;
-    private long price;
+    @Column(nullable = false)
+    private Long price;
+    @Column
     private boolean is_sold;
 
+    protected Fruit() {}
 
-    public Fruit(long id, String name, LocalDate warehousingDate, long price) {
-        this.id = id;
+    public Fruit(String name, LocalDate warehousingDate, long price) {
         this.name = name;
         this.warehousingDate = warehousingDate;
         this.price = price;
-        this.is_sold = false;
     }
 
     public String getName() {

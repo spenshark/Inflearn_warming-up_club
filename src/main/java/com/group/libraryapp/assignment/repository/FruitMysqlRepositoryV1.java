@@ -4,17 +4,16 @@ import com.group.libraryapp.assignment.dto.q456.FruitAmountResponse;
 import com.group.libraryapp.assignment.dto.q456.FruitInfRequest;
 import com.group.libraryapp.assignment.dto.q456.FruitSoldRequest;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
 @Qualifier("mysql")
-public class FruitMysqlRepository implements FruitRepository{
+public class FruitMysqlRepositoryV1 implements FruitRepositoryV1 {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public FruitMysqlRepository(JdbcTemplate jdbcTemplate) {
+    public FruitMysqlRepositoryV1(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
