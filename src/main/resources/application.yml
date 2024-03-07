@@ -27,11 +27,8 @@ spring:
     activate:
       on-profile: dev
 
-  datasource:
-    url: "jdbc:mysql://localhost/library"
-    username: "root"
-    password: "Djore3598!"
-    driver-class-name:   com.mysql.cj.jdbc.Driver
+  profiles:
+    include: mysql
   jpa:
     hibernate:
       ddl-auto: none

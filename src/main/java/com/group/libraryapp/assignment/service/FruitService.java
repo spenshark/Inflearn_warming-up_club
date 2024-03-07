@@ -5,8 +5,6 @@ import com.group.libraryapp.assignment.dto.q456.FruitAmountResponse;
 import com.group.libraryapp.assignment.dto.q456.FruitInfRequest;
 import com.group.libraryapp.assignment.dto.q456.FruitSoldRequest;
 import com.group.libraryapp.assignment.repository.FruitRepository;
-import com.group.libraryapp.assignment.repository.FruitRepositoryV1;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +18,7 @@ public class FruitService {
         this.fruitRepository = fruitRepository;
     }
 
-    public void addFruit(FruitInfRequest request){
+    public void addFruit(FruitInfRequest request) {
         fruitRepository.save(
                 new Fruit(request.getName(), request.getWarehousingDate(), request.getPrice()));
     }
@@ -37,10 +35,10 @@ public class FruitService {
         long salesAmount = 0;
         long notSalesAmount = 0;
 
-        for(Fruit fruit : fruits){
-            if(fruit.isIs_sold())
+        for (Fruit fruit : fruits) {
+            if (fruit.isIs_sold())
                 salesAmount += fruit.getPrice();
-            if(!fruit.isIs_sold())
+            if (!fruit.isIs_sold())
                 notSalesAmount += fruit.getPrice();
         }
 
